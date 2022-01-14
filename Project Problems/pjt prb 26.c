@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int i,n,f,c,b,x,y;
+    char a[50][50];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%s",a[i]);
+    }
+    i=0,x=0,c=0;
+    while(a[i][x]!='\0')
+    {
+        b=0;
+        while(b!=n)
+        {
+        y=0,f=0;
+        while(a[b][y]!='\0')
+        {
+            if(a[b][y]==a[i][x])
+            {
+                f=1;
+                break;
+            }
+            y++;
+        }
+        if(f==0)
+        {
+            break;
+        }
+        b++;
+        }
+        if(f==1)
+        {
+            c++;
+        }
+        x++;
+    }
+        printf("%d",c);
+}
